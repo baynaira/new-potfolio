@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Project{% endblock %}
+
+{% block content %}
+<!--------------portfolio------------>
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Works</h1>
+        
+        <div class="work-list">
+            <div class="work">
+                <img src="{% static 'project-1.png' %}" alt="Newsletter Project">
+                <div class="layout">
+                    <h3>NEWSLETTERS</h3>
+                    <p>A simple responsive news website that features a grid layout.</p>
+                    <a href="https://baynaira.github.io/news/#Categories"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="{% static 'potfolio-image.png' %}" alt="Potfolio Website">
+                <div class="layout">
+                    <h3>Portfolio Website</h3>
+                    <p>A portfolio website that showcases my work, skills, about me section, and social links.</p>
+                    <a href="https://baynaira.github.io/complete-project/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="{% static 'x-icon.png' %}" alt="Project 1">
+                <div class="layout">
+                    <h3>Project 1</h3>
+                    <p>Placeholder text for project description.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'script.js' %}"></script>
+{% endblock %}

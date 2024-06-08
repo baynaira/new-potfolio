@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left">
+          
+          <p><i class="fa-solid fa-envelope"></i>oluwatayoayomide@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i>09040100645</p>
+          <div class="social-icons">
+            <h5>Follow Me:</h5>
+            <a href="https://twitter.com/OAE18bay"><i class='bx bxl-twitter'></i></a>
+            <a href="https://www.instagram.com/baynaira_oae/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.linkedin.com/feed/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/baynaira"><i class='bx bxl-github'></i></a>
+          </div>
+         
+        </div>
+        <div class="contact-right">
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Name" required>
+            <input type="email" name="Email" placeholder="email" required>
+            <textarea name="Message" rows="6" placeholder="Your messsage"></textarea>
+            <button type="submit" class="l-btn">Submit</button>
+          </form>
+          <span id="msg"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+{% endblock %}

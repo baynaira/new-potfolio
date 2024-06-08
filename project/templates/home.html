@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="body">
+    <div id="home" class="body-text">
+        <h3>Hello, i'm</h3>
+        <h1>Ayomide Emmanuel</h1>
+        <h3>And i'm a <span id="text"></span></h3>
+        <hr>
+
+        <a href="{% static 'pdf.pdf' %}" download>
+           <h3>Download CV</h3>
+        </a>
+       
+    </div>
+ </div>
+ 
+                     
+</div>
+<script src="{% static 'script.js' %}"></script>
+{% endblock %}
