@@ -1,3 +1,4 @@
+
 """
 Django settings for potfolio project.
 
@@ -23,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5&t*)3r^-bo6d$&#c4p**1*g@d1ju(44i+l(wj@czp)d71y39q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["baycoineleniyan.pythonanywhere.com"]
 
 
 # Application definition
@@ -117,6 +118,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Correct the path to use BASE_DIR
 STATICFILES_DIRS = [
     BASE_DIR / 'static',  # Where your static files are located in your project
@@ -125,6 +129,7 @@ STATICFILES_DIRS = [
 # Media files (User uploaded content)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
