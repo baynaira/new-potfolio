@@ -1,3 +1,4 @@
+
 """
 Django settings for potfolio project.
 
@@ -119,10 +120,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-STATIC_ROOT = 'home/baycoineleniyan/new-potfolio/project/static/'
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Correct the path to use BASE_DIR
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # Where your static files are located in your project
+]
+
+# Media files (User uploaded content)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
-
+x
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
