@@ -6,6 +6,18 @@ var typed = new Typed("#text", {
   loop: true
 });
 
+//smooth
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
+
+
 // Function to show the sidebar
 function showSidebar() {
   const sidebar = document.querySelector('.sidebar');

@@ -5,10 +5,67 @@
 
 {% block content %}
 <!--------------portfolio------------>
-<div id="portfolio">
+{% comment %} <div id="portfolio">
     <div class="container">
         <h1 class="sub-title">My Works</h1>
         
+        <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="work">
+                    <img src="{% static 'project/project-1.png' %}" alt="Newsletter Project">
+                    <div class="layout">
+                        <h3>NEWSLETTERS</h3>
+                        <p>A simple responsive news website that features a grid layout.</p>
+                        <a href="https://baynaira.github.io/news/#Categories"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="work">
+                    <img src="{% static 'project/potfolio-image.png' %}" alt="Portfolio Website">
+                    <div class="layout">
+                        <h3>Portfolio Website</h3>
+                        <p>A portfolio website that showcases my work, skills, about me section, and social links.</p>
+                        <a href="https://baynaira.github.io/complete-project/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="work">
+                    <img src="{% static 'project/x-icon.png' %}" alt="Project 1">
+                    <div class="layout">
+                        <h3>Project 1</h3>
+                        <p>Placeholder text for project description.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+<div class="container">
+    <h1 class="sub-title">My Works</h1>
+    <div class="container mt-5">
+        <div class="portfolio-container">
+            {% for portfolio_item in portfolio_items %}
+                <div class="portfolio-item">
+                    <img src="{{ portfolio_item.image.url }}" alt="{{ portfolio_item.title }}" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-description">
+                            <h3>{{ portfolio_item.title }}</h3>
+                            <p>{{ portfolio_item.description }}</p>
+                            <a href="{{ portfolio_item.link }}" class="portfolio-link">
+                                <i class="fas fa-link"></i> <!-- Changed to a link icon -->
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% comment %}         
         <div class="work-list">
             <div class="work">
                 <img src="{% static 'project/project-1.png' %}" alt="Newsletter Project">
@@ -35,7 +92,8 @@
                 </div>
             </div>
         </div>
+     {% endcomment %}
     </div>
-</div>
+
 <script src="{% static 'project/script.js' %}"></script>
 {% endblock %}

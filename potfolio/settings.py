@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5&t*)3r^-bo6d$&#c4p**1*g@d1ju(44i+l(wj@czp)d71y39q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["baycoineleniyan.pythonanywhere.com"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'project'
+    'project',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Correct the path to use BASE_DIR
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # Where your static files are located in your project
+     os.path.join(BASE_DIR, "project/static/project"),  # Where your static files are located in your project
 ]
 
 # Media files (User uploaded content)

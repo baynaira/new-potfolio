@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap');
 
 * {
     padding: 0;
@@ -226,13 +226,18 @@ nav li:first-child {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.work:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .work img {
     width: 100%;
     border-radius: 10px;
-    display: block;
-    transition: transform 0.5s;
+    transition: transform 0.5s, filter 0.5s;
 }
 
 .layout {
@@ -279,11 +284,10 @@ nav li:first-child {
 
 .work:hover img {
     transform: scale(1.1);
+    filter: brightness(0.8);
 }
 
-.work:hover .layout {
-    height: 100%;
-}
+
 
 .contact-left {
     flex-basis: 35%;
@@ -439,5 +443,220 @@ form .btn2 {
 
     .menu-btn {
         display: block;
+    }
+} */
+ .body-text {
+    animation: fadeIn 1.5s ease-in-out;
+}
+.body-text span {
+    color: #ff79c6;
+}
+.container {
+    animation: fadeIn 1.5s ease-in-out;
+    padding: 0 20px;
+}
+
+.body-text {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.container {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.portfolio-item {
+    position: relative;
+    width: 100%; /* Full width on mobile */
+    max-width: 350px; /* Limit width for larger screens */
+    height: 250px;
+    overflow: hidden;
+    background: #f8f9fa;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-image {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.9); /* Updated hover color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-description {
+    text-align: center;
+    padding: 20px;
+}
+
+.portfolio-description h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.portfolio-description p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.portfolio-link {
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.portfolio-link i {
+    transition: transform 0.3s ease;
+}
+
+.portfolio-link:hover i {
+    transform: scale(1.2);
+}
+
+.col h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.underline {
+    width: 100%;
+    height: 5px;
+    background: #ff79c6;
+    border-radius: 3px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    overflow: hidden;
+}
+
+.underline span {
+    width: 15px;
+    height: 100%;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+}
+
+#skills {
+    padding: 30px 0;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.skill {
+    background: #5e60ce;
+    padding: 40px;
+    font-size: 0.875rem;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.skill h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.skill:hover {
+    background: #ff79c6;
+    transform: translateY(-10px);
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 2.5rem; /* Increase font size for larger icons */
+    margin-right: 15px;
+    color: #ff79c6;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+    color: #e0e0e0;
+    transform: translateY(-5px);
+}
+
+
+
+@keyframes moving {
+    0% {
+        left: -20px;
+    }
+     100% {
+        left: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .body {
+        padding: 20px;
+    }
+
+    .body-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .body-text h3 {
+        font-size: 1.2rem;
+    }
+
+    a h3 {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+    .portfolio-item {
+        max-width: 100%; /* Full width on mobile */
     }
 }
